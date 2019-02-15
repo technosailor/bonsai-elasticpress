@@ -40,7 +40,7 @@ class Credentials {
 			$credentials[ self::ACCESS_SECRET ] = sanitize_text_field( $_POST[ self::ACCESS_SECRET ] );
 		}
 
-		update_option( self::BONSAI_SETTINGS, $credentials );
+		return update_option( self::BONSAI_SETTINGS, $credentials );
 	}
 
 	/**
