@@ -2,6 +2,7 @@
 namespace Heroku\Bonsai;
 
 use Heroku\Bonsai\Admin\Basic_Auth;
+use Heroku\Bonsai\Admin\Credentials;
 use Heroku\Bonsai\Request\Http;
 
 class Init {
@@ -15,7 +16,8 @@ class Init {
 	}
 
 	public function register_providers() {
-		$this->providers[ Basic_Auth::NAME ] = new Basic_Auth();
+		$this->providers[ Credentials::NAME ] = new Credentials();
+		$this->providers[ Basic_Auth::NAME ] = new Basic_Auth( $this->providers[ Credentials::NAME ] );
 		$this->providers[ Http::NAME ] = new Http( $this->providers[ Basic_Auth::NAME ] );
 
 		add_action( 'ep_settings_custom', function() {
@@ -24,6 +26,10 @@ class Init {
 
 		add_filter( 'ep_format_request_headers', function( $headers ) {
 			return $this->providers[ Http::NAME ]->add_basic_auth_headers( $headers );
+		} );
+
+		add_action( 'admin_init', function() {
+			$this->providers[ Credentials::NAME ]->save_credentials();
 		} );
 	}
 
