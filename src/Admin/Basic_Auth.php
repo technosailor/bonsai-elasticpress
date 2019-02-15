@@ -4,7 +4,7 @@ namespace Heroku\Bonsai\Admin;
 
 class Basic_Auth {
 
-	const NAME = 'basic-auth';
+	const NAME = 'admin.basic-auth';
 
 	const ACCESS_KEY    = 'ep_heroku_access_key';
 	const ACCESS_SECRET = 'ep_heroku_access_secret';
@@ -31,7 +31,7 @@ class Basic_Auth {
                 <td>
                     <input type="text" name="<?php echo esc_Attr( self::ACCESS_KEY ) ?>"
                            id="<?php echo esc_attr( self::ACCESS_KEY ) ?>"
-                           value="<?php echo esc_html( $this->_get_bonsai_access_key() ); ?>">
+                           value="<?php echo esc_html( $this->get_bonsai_access_key() ); ?>">
                 </td>
             </tr>
 
@@ -42,7 +42,7 @@ class Basic_Auth {
                 <td>
                     <input type="text" name="<?php echo esc_attr( self::ACCESS_SECRET ) ?>"
                            id="<?php echo esc_attr( self::ACCESS_SECRET ) ?>"
-                           value="<?php echo esc_html( $this->_get_bonsai_access_secret() ); ?>">
+                           value="<?php echo esc_html( $this->get_bonsai_access_secret() ); ?>">
                 </td>
             </tr>
             </tbody>
@@ -51,7 +51,7 @@ class Basic_Auth {
 		wp_nonce_field( self::NONCE, self::NONCE );
 	}
 
-	private function _get_bonsai_access_key() {
+	public function get_bonsai_access_key() {
 
 		if ( defined( 'HEROKU_BONSAI_ACCESS_KEY' ) && ! empty( HEROKU_BONSAI_ACCESS_KEY ) ) {
 			$value = HEROKU_BONSAI_ACCESS_KEY;
@@ -62,7 +62,7 @@ class Basic_Auth {
 		return $value;
 	}
 
-	private function _get_bonsai_access_secret() {
+	public function get_bonsai_access_secret() {
 
 		if ( defined( 'HEROKU_BONSAI_ACCESS_SECRET' ) && ! empty( HEROKU_BONSAI_ACCESS_SECRET ) ) {
 			$value = HEROKU_BONSAI_ACCESS_SECRET;

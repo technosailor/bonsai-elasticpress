@@ -2,6 +2,7 @@
 namespace Heroku\Bonsai;
 
 use Heroku\Bonsai\Admin\Basic_Auth;
+use Heroku\Bonsai\Request\Http;
 
 class Init {
 
@@ -15,9 +16,14 @@ class Init {
 
 	public function register_providers() {
 		$this->providers[ Basic_Auth::NAME ] = new Basic_Auth();
+		$this->providers[ Http::NAME ] = new Http( $this->providers[ Basic_Auth::NAME ] );
 
 		add_action( 'ep_settings_custom', function() {
 			$this->providers[ Basic_Auth::NAME ]->add_basic_auth_settings();
+		} );
+
+		add_filter( 'ep_format_request_headers', function( $headers ) {
+			return $this->providers[ Http::NAME ]->add_basic_auth_headers( $headers );
 		} );
 	}
 
