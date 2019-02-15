@@ -19,6 +19,9 @@ class Basic_Auth {
 		$this->bonsai_settings = get_option( self::BONSAI_SETTINGS );
 	}
 
+	/**
+	 * Renders the HTML form fields for storing basic auth info
+	 */
 	public function add_basic_auth_settings() {
 		?>
         <h3><?php _e( 'Bonsai by Heroku', 'heroku' ) ?></h3>
@@ -51,6 +54,11 @@ class Basic_Auth {
 		wp_nonce_field( self::NONCE, self::NONCE );
 	}
 
+	/**
+     * Returns the Access key for Basic Auth
+     *
+	 * @return string
+	 */
 	public function get_bonsai_access_key() {
 
 		if ( defined( 'HEROKU_BONSAI_ACCESS_KEY' ) && ! empty( HEROKU_BONSAI_ACCESS_KEY ) ) {
@@ -62,6 +70,11 @@ class Basic_Auth {
 		return $value;
 	}
 
+	/**
+     * Returns the Access secret for Basic auth
+     *
+	 * @return string
+	 */
 	public function get_bonsai_access_secret() {
 
 		if ( defined( 'HEROKU_BONSAI_ACCESS_SECRET' ) && ! empty( HEROKU_BONSAI_ACCESS_SECRET ) ) {

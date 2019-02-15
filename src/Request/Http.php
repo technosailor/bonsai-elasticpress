@@ -12,6 +12,13 @@ class Http {
 		$this->basic_auth = $basic_auth;
 	}
 
+	/**
+	 * Adds the basic auth headers if the access key and secret have been set
+	 * 
+	 * @param $headers
+	 *
+	 * @return mixed
+	 */
 	public function add_basic_auth_headers( $headers ) {
 
 		$key = $this->basic_auth->get_bonsai_access_key();
