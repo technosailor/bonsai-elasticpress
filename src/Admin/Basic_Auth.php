@@ -23,8 +23,8 @@ class Basic_Auth {
 
 	/**
 	 * Renders the HTML form fields for storing basic auth info
-     *
-     * @action ep_settings_custom
+	 *
+	 * @action ep_settings_custom
 	 */
 	public function add_basic_auth_settings() {
 		?>
