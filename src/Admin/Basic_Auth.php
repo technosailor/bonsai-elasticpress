@@ -29,6 +29,7 @@ class Basic_Auth {
 	public function add_basic_auth_settings() {
 		?>
         <h3><?php _e( 'Bonsai by Heroku', 'heroku' ) ?></h3>
+        <span class="description"><?php _e( 'Your Access Key and Access Secret can be found by logging into your <a href="https://app.bonsai.io/clusters/">Bonsai</a> console.', 'heroku' ) ?></span>
         <table class="form-table">
             <tbody>
             <tr>
