@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Bonsai Integration for ElasticPress
+Plugin Name: Bonsai for ElasticPress
 Description: Adds necessary Authentication fields to allow ElasticPress to communicate with Bonsai hosted Elasticsearch
 Author:      Aaron Brazell
 Version:     1.0
