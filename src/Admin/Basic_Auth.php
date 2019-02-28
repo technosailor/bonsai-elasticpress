@@ -38,7 +38,7 @@ class Basic_Auth {
                 </th>
                 <td>
                     <input type="text" name="<?php echo esc_Attr( Credentials::ACCESS_KEY ) ?>"
-                           id="<?php echo esc_attr(  Credentials::ACCESS_KEY ) ?>"
+                           id="<?php echo esc_attr( Credentials::ACCESS_KEY ) ?>"
                            value="<?php echo esc_html( $this->credentials->get_bonsai_access_key() ); ?>">
                 </td>
             </tr>
