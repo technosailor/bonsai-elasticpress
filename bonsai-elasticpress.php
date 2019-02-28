@@ -2,7 +2,7 @@
 /*
 Plugin Name: Bonsai for ElasticPress
 Description: Adds necessary Authentication fields to allow ElasticPress to communicate with Bonsai hosted Elasticsearch
-Author:      Aaron Brazell
+Author:      Heroku
 Version:     1.0
 Author URI:  https://bonsai.io/
 */
