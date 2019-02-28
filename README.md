@@ -5,7 +5,7 @@ Bonsai for ElasticPress is a plugin that allows [Bonsai](https://bonsai.io/) use
 ## Minimum Requirements
 
 * PHP 7+
-* ElasticPress 3.0 **Note: Bonsai for ElasticPress is not compatible with earlier versions of ElasticPress**
+* ElasticPress 3.0 **Note: Bonsai for ElasticPress is not compatible with earlier versions of ElasticPress. ElasticPress 3.0 is not yet available.**
 * A Bonsai account
 
 ## License
