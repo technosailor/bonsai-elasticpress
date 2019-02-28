@@ -27,3 +27,8 @@ At this point, all front-end searched will be handled by Bonsai relieving strain
 You can supercharge your WordPress install by integrating Bonsai in other queries as well. [Everything provided by ElasticPress](https://github.com/10up/ElasticPress/blob/develop/README.md) is available for WordPress to use with Bonsai.
 
 Happy searching!
+
+
+## Developers
+
+Instead of populating the Access Key and Access Secret in the WordPress Admin, you can define `HEROKU_BONSAI_ACCESS_KEY` and `HEROKU_BONSAI_ACCESS_SECRET` in `wp-config.php`.
