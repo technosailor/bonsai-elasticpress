@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/technosailor/bonsai-elasticpress.svg?branch=master)](https://travis-ci.org/technosailor/bonsai-elasticpress)
+
 # Bonsai for ElasticPress
 
 Bonsai for ElasticPress is a plugin that allows [Bonsai](https://bonsai.io/) users to connect to Elasticsearch using the [ElasticPress](https://github.com/10up/elasticpress) plugin.
