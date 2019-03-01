@@ -7,6 +7,7 @@
         "php-di/php-di": "^6"
     },
     "require-dev": {
+        "symfony/console": "^3.2",
         "overtrue/phplint": "1.1.9"
     },
     "license": "GPLv2",
