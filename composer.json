@@ -11,6 +11,7 @@
         "symfony/finder": "^3.0",
         "symfony/process": "^3.0",
         "symfony/yaml": "^3.0",
+        "symfony/debug": "^3.0",
         "overtrue/phplint": "1.1.9"
     },
     "license": "GPLv2",
