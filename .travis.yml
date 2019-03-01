@@ -4,5 +4,4 @@ php:
   - 7.1
   - 7.2
   - 7.3
-script: find src -name "*.php" ! -path '*/NonPHP7.php' -print0 \
-  | xargs -0 -n1 -P8 php -l
+script: if find . -name "*.php" ! -path "./src/*" -print0 | xargs -0 -n 1 -P 8 php -l | grep -v "No syntax errors detected"; then exit 1; fi

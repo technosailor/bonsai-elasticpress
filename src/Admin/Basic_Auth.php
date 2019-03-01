@@ -2,7 +2,7 @@
 
 namespace Heroku\Bonsai\Admin;
 
-class Basic_Auth {sdfa
+class Basic_Auth {fsafsdfds
 
 	const NAME = 'admin.basic-auth';
 
