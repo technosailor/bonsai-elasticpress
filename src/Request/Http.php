@@ -1,7 +1,7 @@
 <?php
-namespace Heroku\Bonsai\Request;
+namespace Bonsai\Request;
 
-use Heroku\Bonsai\Admin\Basic_Auth;
+use Bonsai\Admin\Basic_Auth;
 
 class Http {
 	const NAME = 'request.http';

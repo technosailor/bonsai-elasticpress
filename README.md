@@ -33,4 +33,4 @@ Happy searching!
 
 ## Developers
 
-Instead of populating the Access Key and Access Secret in the WordPress Admin, you can define `HEROKU_BONSAI_ACCESS_KEY` and `HEROKU_BONSAI_ACCESS_SECRET` in `wp-config.php`.
+Instead of populating the Access Key and Access Secret in the WordPress Admin, you can define `EP_BONSAI_ACCESS_KEY` and `EP_BONSAI_ACCESS_SECRET` in `wp-config.php`.

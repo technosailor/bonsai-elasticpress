@@ -1,12 +1,12 @@
 <?php
 
-namespace Heroku\Bonsai\Admin;
+namespace Bonsai\Admin;
 
 class Basic_Auth {
 
 	const NAME = 'admin.basic-auth';
 
-	const NONCE = 'heroku_bonsai_basic_auth';
+	const NONCE = 'bonsai_basic_auth';
 
 	protected $credentials;
 
@@ -28,13 +28,13 @@ class Basic_Auth {
 	 */
 	public function add_basic_auth_settings() {
 		?>
-        <h3><?php _e( 'Bonsai by Heroku', 'heroku' ) ?></h3>
-        <span class="description"><?php _e( 'Your Access Key and Access Secret can be found by logging into your <a href="https://app.bonsai.io/clusters/">Bonsai</a> console.', 'heroku' ) ?></span>
+        <h3><?php _e( 'Bonsai Elasticsearch Settings', 'bonsai' ) ?></h3>
+        <span class="description"><?php _e( 'Your Access Key and Access Secret can be found by logging into your <a href="https://app.bonsai.io/clusters/">Bonsai</a> console.', 'bonsai' ) ?></span>
         <table class="form-table">
             <tbody>
             <tr>
                 <th scope="row">
-                    <label for="<?php echo esc_attr( Credentials::ACCESS_KEY ) ?>"><?php esc_html_e( 'Access Key', 'heroku' ); ?></label>
+                    <label for="<?php echo esc_attr( Credentials::ACCESS_KEY ) ?>"><?php esc_html_e( 'Access Key', 'bonsai' ); ?></label>
                 </th>
                 <td>
                     <input type="text" name="<?php echo esc_Attr( Credentials::ACCESS_KEY ) ?>"
@@ -45,7 +45,7 @@ class Basic_Auth {
 
             <tr>
                 <th scope="row">
-                    <label for="<?php echo esc_attr( Credentials::ACCESS_SECRET ) ?>"><?php esc_html_e( 'Access Secret', 'heroku' ); ?></label>
+                    <label for="<?php echo esc_attr( Credentials::ACCESS_SECRET ) ?>"><?php esc_html_e( 'Access Secret', 'bonsai' ); ?></label>
                 </th>
                 <td>
                     <input type="text" name="<?php echo esc_attr( Credentials::ACCESS_SECRET ) ?>"

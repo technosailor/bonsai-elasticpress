@@ -1,9 +1,9 @@
 <?php
-namespace Heroku\Bonsai;
+namespace Bonsai;
 
-use Heroku\Bonsai\Admin\Basic_Auth;
-use Heroku\Bonsai\Admin\Credentials;
-use Heroku\Bonsai\Request\Http;
+use Bonsai\Admin\Basic_Auth;
+use Bonsai\Admin\Credentials;
+use Bonsai\Request\Http;
 
 class Init {
 

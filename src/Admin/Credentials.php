@@ -1,12 +1,12 @@
 <?php
 
-namespace Heroku\Bonsai\Admin;
+namespace Bonsai\Admin;
 
 class Credentials {
 	const NAME = 'admin.credentials';
 
-	const ACCESS_KEY      = 'ep_heroku_access_key';
-	const ACCESS_SECRET   = 'ep_heroku_access_secret';
+	const ACCESS_KEY      = 'ep_bonsai_access_key';
+	const ACCESS_SECRET   = 'ep_bonsai_access_secret';
 	const BONSAI_SETTINGS = 'bonsai_settings';
 
 
@@ -50,8 +50,8 @@ class Credentials {
 	 */
 	public function get_bonsai_access_key() : string {
 
-		if ( defined( 'HEROKU_BONSAI_ACCESS_KEY' ) && ! empty( HEROKU_BONSAI_ACCESS_KEY ) ) {
-			$value = HEROKU_BONSAI_ACCESS_KEY;
+		if ( defined( 'EP_BONSAI_ACCESS_KEY' ) && ! empty( EP_BONSAI_ACCESS_KEY ) ) {
+			$value = EP_BONSAI_ACCESS_KEY;
 		} else {
 			$value = $this->bonsai_settings[ self::ACCESS_KEY ] ?? '';
 		}
@@ -68,8 +68,8 @@ class Credentials {
 	 */
 	public function get_bonsai_access_secret() : string {
 
-		if ( defined( 'HEROKU_BONSAI_ACCESS_SECRET' ) && ! empty( HEROKU_BONSAI_ACCESS_SECRET ) ) {
-			$value = HEROKU_BONSAI_ACCESS_SECRET;
+		if ( defined( 'EP_BONSAI_ACCESS_SECRET' ) && ! empty( EP_BONSAI_ACCESS_SECRET ) ) {
+			$value = EP_BONSAI_ACCESS_SECRET;
 		} else {
 			$value = $this->bonsai_settings[ self::ACCESS_SECRET ] ?? '';
 		}
