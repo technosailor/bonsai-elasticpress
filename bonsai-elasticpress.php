@@ -5,6 +5,7 @@ Description: Adds necessary Authentication fields to allow ElasticPress to commu
 Author:      Aaron Brazell, Bonsai
 Version:     1.0
 Author URI:  https://bonsai.io/
+Text Domain: bonsai
 */
 
 define( 'BASE_PATH', plugin_dir_path( __FILE__ ) );

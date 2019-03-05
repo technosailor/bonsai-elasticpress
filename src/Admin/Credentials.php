@@ -49,14 +49,7 @@ class Credentials {
 	 * @return string
 	 */
 	public function get_bonsai_access_key() : string {
-
-		if ( defined( 'EP_BONSAI_ACCESS_KEY' ) && ! empty( EP_BONSAI_ACCESS_KEY ) ) {
-			$value = EP_BONSAI_ACCESS_KEY;
-		} else {
-			$value = $this->bonsai_settings[ self::ACCESS_KEY ] ?? '';
-		}
-
-		return $value;
+		return $value = $this->bonsai_settings[ self::ACCESS_KEY ] ?? '';;
 	}
 
 	/**
@@ -67,13 +60,26 @@ class Credentials {
 	 * @return string
 	 */
 	public function get_bonsai_access_secret() : string {
+		return $this->bonsai_settings[ self::ACCESS_SECRET ] ?? '';;
+	}
 
-		if ( defined( 'EP_BONSAI_ACCESS_SECRET' ) && ! empty( EP_BONSAI_ACCESS_SECRET ) ) {
-			$value = EP_BONSAI_ACCESS_SECRET;
-		} else {
-			$value = $this->bonsai_settings[ self::ACCESS_SECRET ] ?? '';
+	public function filter_ep_host( $ep_host ) {
+		$key = $this->get_bonsai_access_key();
+		$secret = $this->get_bonsai_access_secret();
+
+		if( defined( 'EP_HOST' ) && ! empty( EP_HOST ) ) {
+			$ep_host = esc_url( EP_HOST );
 		}
 
-		return $value;
+		if( empty( $ep_host ) ) {
+			return '';
+		}
+
+		if( ! empty( $key ) && ! empty( $secret ) ) {
+			$parts = parse_url( $ep_host );
+			$ep_host = $parts['scheme'] . '://' . $key . ':' . $secret . '@' . $parts['host'];
+		}
+
+		return $ep_host;
 	}
 }
