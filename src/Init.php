@@ -32,7 +32,7 @@ class Init {
 			$this->providers[ Credentials::NAME ]->save_credentials();
 		}, 1 );
 
-		add_filter( 'pre_update_option_ep_host', function( $value ) {
+		add_filter( 'ep_host', function( $value ) {
 			return $this->providers[ Credentials::NAME ]->filter_ep_host( $value );
 		} );
 	}

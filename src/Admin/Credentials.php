@@ -22,7 +22,6 @@ class Credentials {
 	 * @return bool
 	 */
 	public function save_credentials() : bool {
-
 		if ( ! isset( $_POST[ Basic_Auth::NONCE ] ) ) {
 			return false;
 		}
@@ -33,14 +32,14 @@ class Credentials {
 
 		$credentials = [];
 		if ( isset( $_POST[ self::ACCESS_KEY ] ) ) {
-			$credentials[ self::ACCESS_KEY ] = sanitize_text_field( $_POST[ self::ACCESS_KEY ] );
+			$credentials[ 'username' ] = sanitize_text_field( $_POST[ self::ACCESS_KEY ] );
 		}
 
 		if ( isset( $_POST[ self::ACCESS_SECRET ] ) ) {
-			$credentials[ self::ACCESS_SECRET ] = sanitize_text_field( $_POST[ self::ACCESS_SECRET ] );
+			$credentials[ 'token' ] = sanitize_text_field( $_POST[ self::ACCESS_SECRET ] );
 		}
 
-		return update_option( self::BONSAI_SETTINGS, $credentials );
+		return update_option( 'ep_credentials', $credentials );
 	}
 
 	/**
@@ -66,7 +65,6 @@ class Credentials {
 	public function filter_ep_host( $ep_host ) {
 		$key = $this->get_bonsai_access_key();
 		$secret = $this->get_bonsai_access_secret();
-
 		if( defined( 'EP_HOST' ) && ! empty( EP_HOST ) ) {
 			$ep_host = esc_url( EP_HOST );
 		}
