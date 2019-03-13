@@ -27,7 +27,7 @@ class Basic_Auth {
 	 * @action ep_settings_custom
 	 */
 	public function add_basic_auth_settings() {
-		?>
+	    ?>
         <h3><?php _e( 'Bonsai Elasticsearch Settings', 'bonsai' ) ?></h3>
         <span class="description"><?php _e( 'Your Access Key and Access Secret can be found by logging into your <a href="https://app.bonsai.io/clusters/">Bonsai</a> console.', 'bonsai' ) ?></span>
         <table class="form-table">

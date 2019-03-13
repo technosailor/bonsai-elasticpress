@@ -17,7 +17,7 @@ class Credentials {
 	}
 
 	/**
-	 * Save the badsic auth credentials
+	 * Save the basic auth credentials
 	 *
 	 * @return bool
 	 */
@@ -32,14 +32,34 @@ class Credentials {
 
 		$credentials = [];
 		if ( isset( $_POST[ self::ACCESS_KEY ] ) ) {
-			$credentials[ 'username' ] = sanitize_text_field( $_POST[ self::ACCESS_KEY ] );
+			$credentials[ self::ACCESS_KEY ] = sanitize_text_field( $_POST[ self::ACCESS_KEY ] );
 		}
 
 		if ( isset( $_POST[ self::ACCESS_SECRET ] ) ) {
-			$credentials[ 'token' ] = sanitize_text_field( $_POST[ self::ACCESS_SECRET ] );
+			$credentials[ self::ACCESS_SECRET ] = sanitize_text_field( $_POST[ self::ACCESS_SECRET ] );
 		}
 
-		return update_option( 'ep_credentials', $credentials );
+		return update_option( self::BONSAI_SETTINGS, $credentials );
+	}
+
+	/**
+	 * Plays nicely with ElasticPress core basic auth behavior
+	 *
+	 * @param $value
+	 *
+	 * @filter pre_option_ep_credentials
+	 *
+	 * @return array
+	 */
+	public function get_credentials( $value ) {
+		if( empty( $this->bonsai_settings ) ) {
+			return $value;
+		}
+
+		return [
+			'username'  => $this->get_bonsai_access_key(),
+			'token'     => $this->get_bonsai_access_secret(),
+		];
 	}
 
 	/**
@@ -59,10 +79,20 @@ class Credentials {
 	 * @return string
 	 */
 	public function get_bonsai_access_secret() : string {
-		return $this->bonsai_settings[ self::ACCESS_SECRET ] ?? '';;
+		return $this->bonsai_settings[ self::ACCESS_SECRET ] ?? '';
 	}
 
+	/**
+	 * Plays nicely with ElasticPress core elasticsearch host functionality
+	 *
+	 * @param $ep_host
+	 *
+	 * @filter ep_host
+	 *
+	 * @return string
+	 */
 	public function filter_ep_host( $ep_host ) {
+
 		$key = $this->get_bonsai_access_key();
 		$secret = $this->get_bonsai_access_secret();
 		if( defined( 'EP_HOST' ) && ! empty( EP_HOST ) ) {
@@ -78,6 +108,6 @@ class Credentials {
 			$ep_host = $parts['scheme'] . '://' . $key . ':' . $secret . '@' . $parts['host'];
 		}
 
-		return $ep_host;
+		return esc_url( $ep_host );
 	}
 }

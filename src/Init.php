@@ -35,6 +35,10 @@ class Init {
 		add_filter( 'ep_host', function( $value ) {
 			return $this->providers[ Credentials::NAME ]->filter_ep_host( $value );
 		} );
+
+		add_filter( 'pre_option_ep_credentials', function( $value ) {
+			return $this->providers[ Credentials::NAME ]->get_credentials( $value );
+		} );
 	}
 
 	/**
