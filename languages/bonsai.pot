@@ -9,10 +9,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-03-14T16:25:21+00:00\n"
+"POT-Creation-Date: 2019-03-14T16:29:09+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.1.0\n"
-"X-Domain: trunk\n"
+"X-Domain: bonsai\n"
 
 #. Plugin Name of the plugin
 msgid "Bonsai for ElasticPress"
@@ -28,4 +28,20 @@ msgstr ""
 
 #. Author URI of the plugin
 msgid "https://bonsai.io/"
+msgstr ""
+
+#: src/Admin/Basic_Auth.php:31
+msgid "Bonsai Elasticsearch Settings"
+msgstr ""
+
+#: src/Admin/Basic_Auth.php:32
+msgid "Your Access Key and Access Secret can be found by logging into your <a href=\"https://app.bonsai.io/clusters/\">Bonsai</a> console."
+msgstr ""
+
+#: src/Admin/Basic_Auth.php:37
+msgid "Access Key"
+msgstr ""
+
+#: src/Admin/Basic_Auth.php:48
+msgid "Access Secret"
 msgstr ""
