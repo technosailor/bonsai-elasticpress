@@ -7,7 +7,7 @@ Bonsai for ElasticPress is a plugin that allows [Bonsai](https://bonsai.io/) use
 ## Minimum Requirements
 
 * PHP 7+
-* ElasticPress 3.0 **Note: Bonsai for ElasticPress is not compatible with earlier versions of ElasticPress. ElasticPress 3.0 is not yet available.**
+* ElasticPress 3.0+
 * A Bonsai account
 
 ## License
@@ -16,19 +16,20 @@ Bonsai for ElasticPress is licensed under [GPLv2](https://raw.githubusercontent.
 
 ## Usage
 
-**Bonsai for ElasticPress requires ElasticPress 3.0 to work. Please ensure ElasticPress 3.0 is installed and activated.**
+**Affordable, reliable ElasticPress hosting**
 
-* Activate Bonsai for ElasticPress on your Plugins screen.
-* Browse to your [Bonsai cluster console](https://app.bonsai.io/clusters) and click on the Elasticsearch instance you wish to connect to.
-* Click on the "Access" tab at the top of the cluster page.
-* Copy your "Access Key" and "Access Secret" and paste them in the fields provided in your WordPress Admin ElasticPress settings page.
-* Save and click on the "Sync" icon in the upper right corner. This will allow WordPress to send your content to Bonsai for indexing.
+Are you a developer who wants to build more custom functionality into your site’s search engine, or improve its performance at scale? Here are the basics of Bonsai for ElasticPress:
 
-At this point, all front-end searched will be handled by Bonsai relieving strain on your database and providing faster, more efficient, and more relevant search results.
+- Set up a free account at [Bonsai.io](https://bonsai.io). 
+- Connect your Bonsai account with your WordPress site with this plugin.
+- Use the [ElasticPress API](https://github.com/10up/ElasticPress) to build search functionality like faceted search, related posts, autosuggest, facets, and more.
+Use the Bonsai interface to create, scale, and monitor your Elasticsearch cluster. It comes standard with Snapshots, High Availability, multi-AZ deployments, TLS/SSL, and basic authentication. 
 
-You can supercharge your WordPress install by integrating Bonsai in other queries as well. [Everything provided by ElasticPress](https://github.com/10up/ElasticPress/blob/develop/README.md) is available for WordPress to use with Bonsai.
+Bonsai for ElasticPress is free and easy to get started. Sign up at [Bonsai.io](https://bonsai.io).
 
-Happy searching!
+Learn more about ElasticPress here:
+https://github.com/10up/ElasticPress
+
 
 
 ## Developers
